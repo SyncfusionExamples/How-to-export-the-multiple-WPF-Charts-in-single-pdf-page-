@@ -1,0 +1,132 @@
+﻿<Window x:Class="Sample1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" xmlns:local1="clr-namespace:Sample"
+        Title="Sample" WindowState="Maximized"
+        x:Name="window" 
+        Height="500" Width="725">
+    <Window.DataContext>
+        <local1:ViewModel/>
+    </Window.DataContext>
+
+    <Grid Margin="0, 10, 0, 0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+
+            <syncfusion:SfChart Background="White" x:Name="chart1" FontWeight="Bold" Header="January Report" Height="100">
+                <!--Initialize the horizontal axis for SfChart-->
+                <syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:DateTimeAxis FontWeight="Normal" FontSize="12" LabelFormat="dd,MMM"/>
+                </syncfusion:SfChart.PrimaryAxis>
+
+                <!--Initialize the vertical axis for SfChart-->
+                <syncfusion:SfChart.SecondaryAxis>
+                    <syncfusion:NumericalAxis FontWeight="Normal" FontSize="12">
+                    </syncfusion:NumericalAxis>
+                </syncfusion:SfChart.SecondaryAxis>
+
+               <syncfusion:ColumnSeries  
+                    Interior="#FF8BC34A"
+                    ItemsSource="{Binding Data}"
+                    XBindingPath="XValue"
+                    YBindingPath="YValue" />
+
+            </syncfusion:SfChart>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <syncfusion:SfChart Background="White" x:Name="chart2" FontWeight="Bold" Header="Febrary Report" Height="100">
+                <!--Initialize the horizontal axis for SfChart-->
+                <syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:DateTimeAxis LabelFormat="dd,MMM" FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.PrimaryAxis>
+
+                <!--Initialize the vertical axis for SfChart-->
+                <syncfusion:SfChart.SecondaryAxis>
+                    <syncfusion:NumericalAxis FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.SecondaryAxis>
+
+                <!--Initialize the series for SfChart-->
+                <syncfusion:FastColumnBitmapSeries ItemsSource="{Binding Data1}"  
+                                                   XBindingPath="XValue" 
+                                                   YBindingPath="YValue" 
+                                                   Interior="Gray" >
+                </syncfusion:FastColumnBitmapSeries>
+
+            </syncfusion:SfChart>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <syncfusion:SfChart Background="White" x:Name="chart3" FontWeight="Bold" Header="March Report" Height="100">
+                <!--Initialize the horizontal axis for SfChart-->
+                <syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:DateTimeAxis LabelFormat="dd,MMM" FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.PrimaryAxis>
+
+                <!--Initialize the vertical axis for SfChart-->
+                <syncfusion:SfChart.SecondaryAxis>
+                    <syncfusion:NumericalAxis FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.SecondaryAxis>
+
+                <!--Initialize the series for SfChart-->
+                <syncfusion:ColumnSeries ItemsSource="{Binding Data2}"
+                                          XBindingPath="XValue" 
+                                          YBindingPath="YValue" 
+                                          Interior="Yellow" >
+                </syncfusion:ColumnSeries>
+
+            </syncfusion:SfChart>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <syncfusion:SfChart Background="White" x:Name="chart4" FontWeight="Bold" Header="April Report" Height="100">
+                <!--Initialize the horizontal axis for SfChart-->
+                <syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:DateTimeAxis LabelFormat="dd,MMM" FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.PrimaryAxis>
+
+                <!--Initialize the vertical axis for SfChart-->
+                <syncfusion:SfChart.SecondaryAxis>
+                    <syncfusion:NumericalAxis FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.SecondaryAxis>
+
+                <!--Initialize the series for SfChart-->
+                <syncfusion:ColumnSeries ItemsSource="{Binding Data3}" 
+                                       XBindingPath="XValue" 
+                                       YBindingPath="YValue">
+                </syncfusion:ColumnSeries>
+
+            </syncfusion:SfChart>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <syncfusion:SfChart Background="White" x:Name="chart5" FontWeight="Bold" Header="May Report" Height="100">
+                <!--Initialize the horizontal axis for SfChart-->
+                <syncfusion:SfChart.PrimaryAxis>
+                    <syncfusion:DateTimeAxis LabelFormat="dd,MMM" FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.PrimaryAxis>
+
+                <!--Initialize the vertical axis for SfChart-->
+                <syncfusion:SfChart.SecondaryAxis>
+                    <syncfusion:NumericalAxis FontWeight="Normal" FontSize="12"/>
+                </syncfusion:SfChart.SecondaryAxis>
+
+                <!--Initialize the series for SfChart-->
+                <syncfusion:ColumnSeries ItemsSource="{Binding Data4}" 
+                                         XBindingPath="XValue" 
+                                         YBindingPath="YValue"
+                                         Interior="OrangeRed">
+                </syncfusion:ColumnSeries>
+
+            </syncfusion:SfChart>
+
+        </StackPanel>
+
+        <Button x:Name="Print" Grid.Row="5" Content="Print" Width="150" Height="50" Click="Print_Click"/>
+    </Grid>
+</Window>
