@@ -1,7 +1,7 @@
-# How-to-export-the-multiple-WPF-Charts-in-single-pdf-page-
-This article describes how to export all used Syncfusion WPF SfChart controls into single page of pdf format as shown in below
+# How to export the multiple WPF Chart
+This article describes how to export all used Syncfusion [WPF Chart](https://www.syncfusion.com/wpf-controls/charts) controls into single page of pdf format as shown in below.
 
-![](output.png)
+![WPF Chart Multiple Exportation](output.png)
  
 By default, SfChart supports the printing that enables you to print each chart at a time by calling Print method. Considering the use case that your page has ‘n’ number of charts and wants to print it in single page of pdf format then, please follow the below steps.
 
