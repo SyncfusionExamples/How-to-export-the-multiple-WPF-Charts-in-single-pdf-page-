@@ -105,6 +105,8 @@ if ((bool)result)
 pdfDoc.Dispose();
 ```
 
+KB article - [How-to-export-the-multiple-WPF-Charts-in-single-pdf-page](https://www.syncfusion.com/kb/12206/how-to-export-the-multiple-wpf-charts)
+
 ## See Also
  
 [How to export chart as image](https://help.syncfusion.com/wpf/sfchart/exporting)
