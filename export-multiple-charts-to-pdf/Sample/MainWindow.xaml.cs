@@ -6,7 +6,6 @@ using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Microsoft.Win32;
 using System.Drawing;
-using Syncfusion.UI.Xaml.Charts;
 
 namespace Sample1
 {
