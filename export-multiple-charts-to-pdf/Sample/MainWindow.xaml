@@ -9,7 +9,7 @@
         <local1:ViewModel/>
     </Window.DataContext>
 
-    <Grid Margin="0, 10, 0, 0">
+    <Grid Margin="0, 10, 0, 0" x:Name="grid">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -17,7 +17,8 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
 
@@ -33,7 +34,7 @@
                     </syncfusion:NumericalAxis>
                 </syncfusion:SfChart.SecondaryAxis>
 
-               <syncfusion:ColumnSeries  
+                <syncfusion:ColumnSeries  
                     Interior="#FF8BC34A"
                     ItemsSource="{Binding Data}"
                     XBindingPath="XValue"
@@ -126,7 +127,7 @@
             </syncfusion:SfChart>
 
         </StackPanel>
-
         <Button x:Name="Print" Grid.Row="5" Content="Print" Width="150" Height="50" Click="Print_Click"/>
+        <Button Grid.Row="6" Content="Print with MVVM-compatible" Width="200" Height="50" Command="{Binding ExportButtonCommand}" CommandParameter="{x:Reference grid}"/>
     </Grid>
 </Window>
